@@ -1,0 +1,25 @@
+{
+  "name": "webartercopy",
+  "version": "1.0.0",
+  "description": "Group task",
+  "main": "dbConnection.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Sireesha"
+  },
+  "author": "Sireesha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0",
+    "request": "^2.88.2"
+  }
+}
