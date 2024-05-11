@@ -6,6 +6,8 @@
     <title>Bartering Platform</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
     <header>
@@ -23,6 +25,8 @@
     <div>
         <img src="images/hero.jpg" width="100%">
     </div>
+    <div id="welcome-message"></div>
+
     <section id="search">
         <h2>Search Listings</h2>
             <input type="text" name="keyword" id="searchInput" placeholder="Search...">
@@ -34,8 +38,26 @@
     <footer>
         &copy; 2024 Bartering Platform
     </footer>
+    
 
+    <script>
+        // Connect to Socket.io server
+        const socket = io();
+    
+        // Handle 'hello' event from server
+        socket.on('hello', (message) => {
+            console.log(message);
+        });
+    
+        // Handle 'number' event from server
+        socket.on('number', (data) => {
+            console.log('Received number:', data);
+            document.getElementById('randomNumbers').textContent += data + ', ';
+        });
+    </script>
+    <div id="randomNumbers">Random numbers: </div>
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
+
 </body>
 </html>

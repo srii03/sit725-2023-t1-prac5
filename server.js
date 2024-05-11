@@ -1,18 +1,21 @@
 const express = require('express');
-const bodyParser = require('body-parser'); // Import body-parser module
-const app = express();
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 
-// Add body-parser middleware to parse JSON bodies
-app.use(bodyParser.json());
+const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 
-// Serve static files from the 'public' directory
+// Middleware
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://sireesha2622:Siri12345@cluster0.ekefhyn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
+// MongoDB Connection
+mongoose.connect('mongodb+srv://sireesha2622:Siri12345@cluster0.ekefhyn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Define a user schema
@@ -25,31 +28,28 @@ const userSchema = new mongoose.Schema({
 // Define a user model
 const User = mongoose.model('User', userSchema);
 
+// Routes
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Define a route handler for /api/users
+// Get all users
 app.get('/api/users', async (req, res) => {
   try {
-    // Retrieve all users from the database
-    const users = await User.find({}, 'name email'); // Fetch both 'name' and 'email' fields
-    res.json(users); // Send the users as JSON response
+    const users = await User.find({}, 'name email');
+    res.json(users);
   } catch (err) {
     console.error('Error retrieving users:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
 
-// API endpoint to create a new user
+// Create a new user
 app.post('/api/users', async (req, res) => {
   try {
     const { name, email } = req.body;
-    // Create a new user instance
     const newUser = new User({ name, email });
-    // Save the user to the database
     await newUser.save();
-    // Redirect the user to index.html after successful user creation
     res.redirect('/?username=' + encodeURIComponent(name));
   } catch (err) {
     console.error('Error creating user:', err);
@@ -57,12 +57,27 @@ app.post('/api/users', async (req, res) => {
   }
 });
 
+// Hello route
 app.get('/hello', (req, res) => {
   res.json({ message: 'Hello, User!' });
 });
 
+// Socket.IO connection handling
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.emit('hello', 'Hello User');
+  
+  socket.on('disconnect', () => {
+      console.log('user disconnected');
+  });
+
+  setInterval(() => {
+      socket.emit('number', parseInt(Math.random() * 10));
+  }, 1000);
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+http.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
