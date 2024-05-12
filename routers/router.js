@@ -1,18 +1,18 @@
-var express = require('express'); // Changed from 'var exports = require('express');'
+var express = require('express'); 
 
-let router = express.Router(); // Changed from 'let router = exports.Router();'
+let router = express.Router(); 
 let controller = require('../controllers/controller');
 
 router.post('/', (req, res) => {
-    controller.postUser(req, res); // Changed from 'controller.postCat'
+    controller.postUser(req, res); 
 });
 
 router.get('/', (req, res) => {
-    controller.getAllUsers(req, res); // Changed from 'controller.getAllCats'
+    controller.getAllUsers(req, res); 
 });
 
 router.delete('/', (req, res) => {
-    controller.deleteUser(req, res); // Changed from 'controller.deleteCat'
+    controller.deleteUser(req, res); 
 });
 
 module.exports = router;
