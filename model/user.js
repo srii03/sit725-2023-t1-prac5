@@ -1,8 +1,8 @@
 let client = require('../dbConnection');
 
-let collection = client.db("Text1").collection('User'); // Changed collection name from 'Cat' to 'User'
+let collection = client.db("Text1").collection('User'); 
 
-function postUser(user, callback) { // Changed function name from postCat to postUser
+function postUser(user, callback) { 
     collection.insertOne(user, (err, result) => {
         if (!err) {
             callback(null, result);
@@ -12,7 +12,7 @@ function postUser(user, callback) { // Changed function name from postCat to pos
     });
 }
 
-function getAllUsers(callback) { // Changed function name from getAllCats to getAllUsers
+function getAllUsers(callback) { 
     collection.find({}).toArray((err, result) => {
         if (!err) {
             callback(null, result);
@@ -22,7 +22,7 @@ function getAllUsers(callback) { // Changed function name from getAllCats to get
     });
 }
 
-function deleteUser(user, callback) { // Changed function name from deleteCat to deleteUser
+function deleteUser(user, callback) { 
     collection.deleteOne(user, (err, result) => {
         if (!err) {
             callback(null, result);
@@ -32,5 +32,5 @@ function deleteUser(user, callback) { // Changed function name from deleteCat to
     });
 }
 
-module.exports = { postUser, getAllUsers, deleteUser }; // Updated export object key names
+module.exports = { postUser, getAllUsers, deleteUser }; 
 
