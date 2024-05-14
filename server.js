@@ -72,9 +72,17 @@ io.on('connection', (socket) => {
       console.log('user disconnected');
   });
 
+  // Emit messages at regular intervals
   setInterval(() => {
-      socket.emit('number', parseInt(Math.random() * 10));
-  }, 1000);
+    const randomMessages = [
+      "Welcome to our bartering platform!",
+      "Find great deals on items you need.",
+      "Trade your items with others for things you want!"
+    ];
+    const randomIndex = Math.floor(Math.random() * randomMessages.length);
+    const randomMessage = randomMessages[randomIndex];
+    socket.emit('message', randomMessage);
+  }, 5000); // Adjust the interval as needed
 });
 
 // Start the server

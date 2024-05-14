@@ -15,7 +15,11 @@ router.get('/', (req, res) => {
 
 // DELETE route to delete a user
 router.delete('/', (req, res) => {
+<<<<<<< Updated upstream
     controller.deleteUser(req, res); 
+=======
+    controller.deleteUser(req, res);
+>>>>>>> Stashed changes
 });
 
 module.exports = router;

@@ -174,3 +174,27 @@ footer {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
+.message {
+    background-color: #811994; /* Background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Border radius */
+    margin-bottom: 10px; /* Margin bottom */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 26px; /* Font size */
+    font-style: italic;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+    animation: slideIn 1s forwards; /* Slide-in animation */
+}
+
+/* Define slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Start off the screen on the left */
+        opacity: 0; /* Initially invisible */
+    }
+    to {
+        transform: translateX(0); /* Slide to the right */
+        opacity: 1; /* Fade in */
+    }
+}

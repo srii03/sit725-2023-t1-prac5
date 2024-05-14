@@ -32,32 +32,16 @@
             <input type="text" name="keyword" id="searchInput" placeholder="Search...">
             <button type="submit" id="searchButton">Search</button>
     </section>
+    <div id="messageDisplay"></div>
     <main id="content">
     </main>
 
     <footer>
         &copy; 2024 Bartering Platform
     </footer>
-    
-
-    <script>
-        // Connect to Socket.io server
-        const socket = io();
-    
-        // Handle 'hello' event from server
-        socket.on('hello', (message) => {
-            console.log(message);
-        });
-    
-        // Handle 'number' event from server
-        socket.on('number', (data) => {
-            console.log('Received number:', data);
-            document.getElementById('randomNumbers').textContent += data + ', ';
-        });
-    </script>
-    <div id="randomNumbers">Random numbers: </div>
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/client.js"></script>
 
 </body>
 </html>
