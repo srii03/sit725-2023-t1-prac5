@@ -1,4 +1,7 @@
-// script.js
+// Define reserveItem function in the global scope
+function reserveItem(itemId) {
+    window.location.href = `message.html?itemId=${itemId}`;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Model (simulated data)
@@ -25,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Category: ${item.category}</p>
                     <p>Owner ID: ${item.owner_id}</p>
                     <p>Status: ${item.status}</p>
-                    <button onclick="reserveItem(${item.id})">Reserve</button>
+                    <!-- Pass item ID to reserveItem function -->
+                    <button onclick="reserveItem(${item.id})">Enquire</button>
                 </div>
             `;
         });
@@ -55,10 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         items.push(newItem);
 
         showItems(items);
-    }
-
-    function reserveItem(itemId) {
-        alert(`Item ${itemId} reserved successfully.`);
     }
 
     // Search functionality

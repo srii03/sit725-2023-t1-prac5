@@ -175,7 +175,7 @@ footer {
     cursor: pointer;
 }
 .message {
-    background-color: #811994; /* Background color */
+    background-color: #4b1455; /* Background color */
     color: white; /* Text color */
     padding: 10px 20px; /* Padding */
     border-radius: 5px; /* Border radius */
@@ -197,4 +197,121 @@ footer {
         transform: translateX(0); /* Slide to the right */
         opacity: 1; /* Fade in */
     }
+}
+.messaging-container {
+    display: flex;
+}
+
+.messaging-sidebar {
+    flex: 0 0 25%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.messaging-main {
+    flex: 1;
+    padding: 20px;
+}
+
+.item {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.item h2 {
+    margin-top: 0;
+}
+
+.message-input {
+    margin-top: 20px;
+}
+
+.message-input textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.message-input button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.message-input button:hover {
+    background-color: #555;
+}
+
+
+/* Style for suggested buttons */
+/* Add this CSS to your existing styles.css file or create a new one */
+
+/* Style for suggested buttons */
+#suggested-buttons {
+    margin-top: 10px;
+}
+
+.suggested-question {
+    display: block;
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: italic;
+}
+
+.suggested-question:hover {
+    background-color: #0056b3;
+}
+
+/* Style for chat messages */
+.message {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.user {
+    background-color: #02090f; /* Light blue background for user messages */
+    font-size: 14px; 
+}
+
+.bot {
+    background-color: #79204a; /* Light gray background for bot messages */
+    font-size: 14px; 
+}
+
+#message-input {
+    width: calc(100% - 40px); /* Adjust the width as needed */
+    padding: 10px; /* Adjust the padding as needed */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Border radius */
+    font-size: 16px; /* Font size */
+}
+
+/* Style for send icon */
+#send-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #f3f7fa; /* Icon color */
+}
+
+#send-button:hover {
+    color: #700b80; /* Icon color on hover */
+}
+
+/* Style for user input container */
+#user-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Adjust margin as needed */
 }
