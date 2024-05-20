@@ -315,3 +315,59 @@ footer {
     align-items: center;
     margin-top: 10px; /* Adjust margin as needed */
 }
+.form-container {
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #62153f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="email"], input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #671962;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e5e5ec; /* Match this to your login button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #5058cc;
+}
+
+.form-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    color: #ebe8ec;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+.signup-prompt a {
+    color: #007BFF; /* Bright blue for visibility */
+    text-decoration: underline; /* Indicates it's clickable */
+}
+
+.signup-prompt a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}

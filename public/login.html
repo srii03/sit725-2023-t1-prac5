@@ -20,13 +20,36 @@
                 <input type="text" id="username" name="username" required aria-label="Username">
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required aria-label="Password">
-
+                <!-- login.html -->
+                <input type="password" id="password" name="password" required aria-label="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}" title="Password must be at least 8 characters long, include uppercase and lowercase letters, a number, and a special character.">
+                
+                <div id="error-message" style="color: red;"></div>
                 <button type="submit">Login</button>
             </fieldset>
-            <a href="index.html" style="display: block; margin-top: 10px; color: purple; text-decoration: none; text-align: center;">Home</a>
+            <div><a href="index.html" style="display: block; margin-top: 10px; color: purple; text-decoration: none; text-align: center;">Home</a>
+
+            <p class="signup-prompt">
+                Don't have an account? <a href="signup.html" style="color: #007BFF; text-decoration: none;">Sign up here</a>
+            </p>
+            </div>
         </form>
+        
     </div>
     <script src="js/login.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const passwordInput = document.getElementById('password');
+            const password = passwordInput.value;
+        
+            // Updated regex to check password strength for at least 8 characters
+            const strongPasswordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}/;
+        
+            if (!strongPasswordRegex.test(password)) {
+                event.preventDefault(); // Prevent form submission
+                alert('Your password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                passwordInput.focus(); // Focus the password input for correction
+            }
+        });
+        </script>
 </body>
 </html>

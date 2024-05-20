@@ -7,6 +7,7 @@ const path = require('path');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
+const bcrypt = require('bcryptjs');
 
 // Middleware
 app.use(bodyParser.json());
@@ -57,6 +58,24 @@ app.post('/api/users', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+app.post('/api/signup', async (req, res) => {
+  try {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10); // the '10' is the salt rounds
+      const newUser = new User({
+          email: req.body.email,
+          username: req.body.username,
+          password: hashedPassword
+      });
+
+      await newUser.save();
+      res.status(201).json({ success: true, message: 'User registered successfully' });
+  } catch (error) {
+      console.error('Signup error:', error);
+      res.status(500).json({ success: false, message: 'Failed to register user', errorDetail: error.message });
+  }
+});
+;
 
 // Hello route
 app.get('/hello', (req, res) => {
