@@ -1,4 +1,3 @@
-// login.js
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting normally
 
@@ -25,8 +24,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(response => {
         if (response.ok) {
             console.log('User data submitted successfully');
-            // Redirect to another page
-            window.location.href = '/index.html'; // Change the URL as needed
+            localStorage.setItem('username', username); // Store the username in localStorage
+            window.location.href = 'index.html'; // Redirect to the index page
         } else {
             console.error('Failed to submit user data');
             // Handle errors or display error messages to the user
@@ -36,4 +35,3 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         console.error('Error:', error);
     });
 });
-
