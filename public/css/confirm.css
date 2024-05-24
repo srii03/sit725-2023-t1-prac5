@@ -1,0 +1,103 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: black;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2f4f4f;
+}
+
+.exchange-item {
+  background-color: black;
+  color: #2f4f4f;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.exchange-item div {
+  margin-bottom: 10px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item-details div {
+  text-align: left;
+  font-size: 16px;
+}
+
+.item-details input {
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.customer-details {
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 30%;
+  margin-right: 10px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.form-group input,
+.form-group select {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  background-color: black;
+  color: whitesmoke;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00bfff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #00bfff;
+}
