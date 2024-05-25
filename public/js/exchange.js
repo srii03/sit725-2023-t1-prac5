@@ -221,6 +221,10 @@ function displayConfirmationPage() {
     email,
     orderId,
   );
+  setTimeout(() => {
+    window.location.href = 'feedback.html'
+  }, 2000);
+
 }
 function handleFormSubmit(event) {
   // Extract values from the form fields
