@@ -2,15 +2,21 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e; /* Dark background */
+    background-color: #1e1e1e;
+    /* Dark background */
     color: #fff;
 }
 
 header {
-    background: linear-gradient(90deg, #ad1457, #880e4f); /* Radiant pink-purple gradient */
+    background: linear-gradient(90deg, #ad1457, #880e4f);
+    /* Radiant pink-purple gradient */
     padding: 10px 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    background-color: inherit !important;
 }
 
 nav a {
@@ -22,7 +28,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffd700; /* Change color on hover */
+    color: #ffd700;
+    /* Change color on hover */
 }
 
 main {
@@ -34,7 +41,8 @@ main {
 }
 
 .item {
-    background: linear-gradient(135deg, #2d2d2d, #333333); /* Dark gray gradient */
+    background: linear-gradient(135deg, #2d2d2d, #333333);
+    /* Dark gray gradient */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -43,7 +51,8 @@ main {
 }
 
 .item:hover {
-    transform: translateY(-5px); /* Lift on hover */
+    transform: translateY(-5px);
+    /* Lift on hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -58,7 +67,8 @@ main {
 }
 
 button {
-    background: linear-gradient(90deg, #ad1457, #880e4f); /* Radiant pink-purple gradient */
+    background: linear-gradient(90deg, #ad1457, #880e4f);
+    /* Radiant pink-purple gradient */
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -69,32 +79,38 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(90deg, #b71c1c, #880e4f); /* Lighten gradient on hover */
+    background: linear-gradient(90deg, #b71c1c, #880e4f);
+    /* Lighten gradient on hover */
 }
 
 footer {
-    background: linear-gradient(90deg, #ad1457, #880e4f); /* Radiant pink-purple gradient */
+    background: linear-gradient(90deg, #ad1457, #880e4f);
+    /* Radiant pink-purple gradient */
     padding: 10px 0;
     text-align: center;
     font-size: 0.9rem;
     margin-top: 30px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
+
 .logo {
     float: left;
     margin-right: 10px;
 }
+
 .logo img {
-    width: 100px; 
+    width: 100px;
     height: auto;
     vertical-align: middle;
 }
+
 .item img {
-    width: 200px; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto; 
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
 .login-container {
     width: 800px;
     margin: 0 auto;
@@ -119,12 +135,14 @@ footer {
 .login-container input[type="email"],
 .login-container input[type="text"],
 .login-container input[type="password"] {
-    width: 100%; /* Make input fields take up full width */
+    width: 100%;
+    /* Make input fields take up full width */
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    box-sizing: border-box; /* Ensure padding and border don't increase the width */
+    box-sizing: border-box;
+    /* Ensure padding and border don't increase the width */
 }
 
 .login-container button[type="submit"] {
@@ -140,9 +158,10 @@ footer {
 .login-container button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
 .username-display {
-    float: right; 
-    margin-right: 5px; 
+    float: right;
+    margin-right: 5px;
     position: fixed;
     top: 10px;
     right: 10px;
@@ -150,6 +169,7 @@ footer {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 #search {
     margin-bottom: 20px;
 }
@@ -174,30 +194,46 @@ footer {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
+
 .message {
-    background-color: #4b1455; /* Background color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Border radius */
-    margin-bottom: 10px; /* Margin bottom */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 26px; /* Font size */
+    background-color: #4b1455;
+    /* Background color */
+    color: white;
+    /* Text color */
+    padding: 10px 20px;
+    /* Padding */
+    border-radius: 5px;
+    /* Border radius */
+    margin-bottom: 10px;
+    /* Margin bottom */
+    font-family: Arial, sans-serif;
+    /* Font family */
+    font-size: 26px;
+    /* Font size */
     font-style: italic;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
-    animation: slideIn 1s forwards; /* Slide-in animation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+    animation: slideIn 1s forwards;
+    /* Slide-in animation */
 }
 
 /* Define slide-in animation */
 @keyframes slideIn {
     from {
-        transform: translateX(-100%); /* Start off the screen on the left */
-        opacity: 0; /* Initially invisible */
+        transform: translateX(-100%);
+        /* Start off the screen on the left */
+        opacity: 0;
+        /* Initially invisible */
     }
+
     to {
-        transform: translateX(0); /* Slide to the right */
-        opacity: 1; /* Fade in */
+        transform: translateX(0);
+        /* Slide to the right */
+        opacity: 1;
+        /* Fade in */
     }
 }
+
 .messaging-container {
     display: flex;
 }
@@ -217,6 +253,12 @@ footer {
     border: 1px solid #ccc;
     margin-bottom: 20px;
     padding: 10px;
+
+}
+
+#content {
+    display: flex;
+    gap: 50px;
 }
 
 .item h2 {
@@ -279,21 +321,28 @@ footer {
 }
 
 .user {
-    background-color: #02090f; /* Light blue background for user messages */
-    font-size: 14px; 
+    background-color: #02090f;
+    /* Light blue background for user messages */
+    font-size: 14px;
 }
 
 .bot {
-    background-color: #79204a; /* Light gray background for bot messages */
-    font-size: 14px; 
+    background-color: #79204a;
+    /* Light gray background for bot messages */
+    font-size: 14px;
 }
 
 #message-input {
-    width: calc(100% - 40px); /* Adjust the width as needed */
-    padding: 10px; /* Adjust the padding as needed */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 5px; /* Border radius */
-    font-size: 16px; /* Font size */
+    width: calc(100% - 40px);
+    /* Adjust the width as needed */
+    padding: 10px;
+    /* Adjust the padding as needed */
+    border: 1px solid #ccc;
+    /* Border color */
+    border-radius: 5px;
+    /* Border radius */
+    font-size: 16px;
+    /* Font size */
 }
 
 /* Style for send icon */
@@ -302,22 +351,27 @@ footer {
     border: none;
     cursor: pointer;
     font-size: 20px;
-    color: #f3f7fa; /* Icon color */
+    color: #f3f7fa;
+    /* Icon color */
 }
 
 #send-button:hover {
-    color: #700b80; /* Icon color on hover */
+    color: #700b80;
+    /* Icon color on hover */
 }
 
 /* Style for user input container */
 #user-input {
     display: flex;
     align-items: center;
-    margin-top: 10px; /* Adjust margin as needed */
+    margin-top: 10px;
+    /* Adjust margin as needed */
 }
+
 .form-container {
     width: 100%;
-    max-width: 400px; /* Adjust width as needed */
+    max-width: 400px;
+    /* Adjust width as needed */
     margin: 20px auto;
     padding: 20px;
     background-color: #62153f;
@@ -329,7 +383,9 @@ footer {
     margin-bottom: 15px;
 }
 
-input[type="email"], input[type="text"], input[type="password"] {
+input[type="email"],
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -340,7 +396,8 @@ input[type="email"], input[type="text"], input[type="password"] {
 .btn {
     width: 100%;
     padding: 10px;
-    background-color: #e5e5ec; /* Match this to your login button */
+    background-color: #e5e5ec;
+    /* Match this to your login button */
     color: white;
     border: none;
     border-radius: 4px;
@@ -363,11 +420,32 @@ input[type="email"], input[type="text"], input[type="password"] {
 .form-link:hover {
     text-decoration: underline;
 }
+
 .signup-prompt a {
-    color: #007BFF; /* Bright blue for visibility */
-    text-decoration: underline; /* Indicates it's clickable */
+    color: #007BFF;
+    /* Bright blue for visibility */
+    text-decoration: underline;
+    /* Indicates it's clickable */
 }
 
 .signup-prompt a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* ---------------------------- */
+#aTagNotifi {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    background-color: inherit !important;
+}
+
+#aTagNotifi a {
+    background-color: inherit;
+}
+
+.notification{
+    color: black;
+    text-align: start;
 }

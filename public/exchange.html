@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="css/confirm.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="section-title mode">Delivery Mode: IN APP</div>
+        </div>
+        <div class="section exchange-item">
+            <div class="section-title">Please specify your exchange item</div>
+            <div class="item-details">
+                <div>Item Name</div>
+                <input value="ship" type="text" id="item-name" name="item-name" required>
+            </div>
+            <div class="item-details">
+                <div>Estimated Price</div>
+                <input value="5000" type="text" id="estimated-price" name="estimated-price" required>
+            </div>
+        </div>
+        <div class="section customer-details">
+            <div class="section-title">Customer Details</div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input value="raju" type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="door-number">Door Number</label>
+                    <input value="1" type="text" id="door-number" name="door-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input value="harpley st" type="text" id="street" name="street" required>
+                </div>
+                <div class="form-group">
+                    <label for="suburb">Suburb</label>
+                    <input value="hopperscrossing" type="text" id="suburb" name="suburb" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state" name="state" required>
+                        <option value="">Select State</option>
+                        <option value="NSW">New South Wales</option>
+                        <option value="VIC">Victoria</option>
+                        <option value="QLD">Queensland</option>
+                        <option value="WA">Western Australia</option>
+                        <option value="SA">South Australia</option>
+                        <option value="TAS">Tasmania</option>
+                        <option value="ACT">Australian Capital Territory</option>
+                        <option value="NT">Northern Territory</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pin">PIN Code</label>
+                    <input value="3456" type="number" id="pin" name="pin" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input value="832794374" type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input value="raju@gmail.com" type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <button id="submit-btn" onclick="displayConfirmationPage()" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/exchange.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('id');
+        let mode = document.getElementsByClassName('section-title mode')[0]
+        if (orderId.includes("direct")) {
+            mode.innerHTML = "Delivery Mode: IN PERSON"
+        } else {
+            mode.innerHTML = "Delivery Mode: IN APP"
+        }
+    </script>
+</body>
+
+</html>

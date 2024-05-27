@@ -14,11 +14,16 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://sireesha2622:Siri12345@cluster0.ekefhyn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Error connecting to MongoDB:', err));
+mongoose
+  .connect(
+    'mongodb+srv://chandra98au:EWCdATZ1soDCW6p6@cluster0.aymawxs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  )
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('Error connecting to MongoDB:', err));
 
 // Define a user schema
 const userSchema = new mongoose.Schema({
@@ -61,22 +66,28 @@ app.post('/api/users', async (req, res) => {
 
 app.post('/api/signup', async (req, res) => {
   try {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10); // the '10' is the salt rounds
-      const newUser = new User({
-          email: req.body.email,
-          username: req.body.username,
-          password: hashedPassword
-      });
+    const hashedPassword = await bcrypt.hash(req.body.password, 10); // the '10' is the salt rounds
+    const newUser = new User({
+      email: req.body.email,
+      username: req.body.username,
+      password: hashedPassword,
+    });
 
-      await newUser.save();
-      res.status(201).json({ success: true, message: 'User registered successfully' });
+    await newUser.save();
+    res
+      .status(201)
+      .json({ success: true, message: 'User registered successfully' });
   } catch (error) {
-      console.error('Signup error:', error);
-      res.status(500).json({ success: false, message: 'Failed to register user', errorDetail: error.message });
+    console.error('Signup error:', error);
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: 'Failed to register user',
+        errorDetail: error.message,
+      });
   }
 });
-;
-
 // Hello route
 app.get('/hello', (req, res) => {
   res.json({ message: 'Hello, User!' });
@@ -86,17 +97,17 @@ app.get('/hello', (req, res) => {
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.emit('hello', 'Hello User');
-  
+
   socket.on('disconnect', () => {
-      console.log('user disconnected');
+    console.log('user disconnected');
   });
 
   // Emit messages at regular intervals
   setInterval(() => {
     const randomMessages = [
-      "Welcome to our bartering platform!",
-      "Find great deals on items you need.",
-      "Trade your items with others for things you want!"
+      'Welcome to our bartering platform!',
+      'Find great deals on items you need.',
+      'Trade your items with others for things you want!',
     ];
     const randomIndex = Math.floor(Math.random() * randomMessages.length);
     const randomMessage = randomMessages[randomIndex];

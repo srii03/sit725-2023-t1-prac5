@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="/socket.io/socket.io.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -19,7 +22,43 @@
             <a href="#" id="addItemLink">Add Item</a>
             <a href="login.html" id="user-profile">Login</a>
             <a href="message.html" id="messageLink">Message</a>
-            <div id="username-display" class="username-display"><i class="fas fa-user"></i> Username</div>
+            <div class="btn-block">
+                <div id="aTagNotifi">
+
+                    <a href="#modal1" class="waves-effect waves-light btn modal-trigger" id="x">
+
+                        <img src="images/notifi.png" alt="" height="26px" width="26px">
+
+
+                    </a>
+                </div>
+
+
+
+                <div id="modal1" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4 style="color: black;">Notification Center</h4>
+                        <div class="modal-content">
+                            <h4>Random Notifications</h4>
+                            <div class="notification">Please update your profile</div>
+                            <div class="notification">You have new enquire with your recent listing</div>
+                            <div class="notification"> You have 20% offer valid till 4-jun-2024</div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-red btn-flat"
+                            style="background-color: red !important;">Cancel </a>
+
+                    </div>
+
+
+                </div>
+
+                <div id="username-display" class="username-display"><i class="fas fa-user"></i> Username</div>
         </nav>
     </header>
     <div class="hero-image">
@@ -37,8 +76,14 @@
     <footer>
         &copy; 2024 Bartering Platform
     </footer>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
     <script src="js/client.js"></script>
 </body>
+
 </html>
